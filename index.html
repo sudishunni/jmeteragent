@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMeter AI Agent</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="config-screen">
+        <h2>Configuration</h2>
+        <label for="jmeter-path">JMeter Bin Path:</label>
+        <input type="text" id="jmeter-path" placeholder="e.g., /path/to/apache-jmeter-5.x/bin">
+        <br>
+        <label for="openai-key">OpenAI API Key:</label>
+        <input type="password" id="openai-key">
+        <br>
+        <button id="save-config">Save Configuration</button>
+        <p id="config-error" class="error-message"></p>
+    </div>
+
+    <div id="chat-screen" style="display: none;">
+        <div class="chat-header"> <!-- New header container -->
+            <h1>JMeter AI Agent</h1>
+            <div class="header-buttons"> <!-- Renamed button container -->
+                <button id="clear-chat-button" title="Clear Chat History">🗑️ Clear Logs</button> <!-- Changed text, removed inline style -->
+                <button id="settings-button" title="Edit Configuration">⚙️</button>
+            </div>
+        </div>
+        <div id="chatbox">
+            <div class="message bot-message">Welcome! How can I help you with JMeter today?</div>
+        </div>
+        <div id="input-area">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+        <!-- Removed Check Status Button -->
+         <p id="chat-error" class="error-message"></p>
+         <div id="status-area" style="margin-top: 10px; font-style: italic; color: #555; white-space: pre-wrap; /* Ensure pre formatting works */ max-height: 200px; overflow-y: auto; border: 1px solid #eee; padding: 5px; background-color: #f9f9f9;"></div> <!-- Area to display status, added some styling -->
+         <button id="toggle-status-button">Hide Status</button> <!-- Added toggle button -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
